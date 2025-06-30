@@ -1,46 +1,88 @@
-# Getting Started with Create React App
+# abao_marissa_ui_garden
+## A React + TypeScript Web Component Library featuring reusable components like Button, Card, Label, Text, Table, Dropdown, RadioButton, Img, HeroImage, and more. Includes Storybook for interactive documentation and testing.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 1. Getting Started
+### Clone this repository
+git clone https://github.com/your-username/abao_marissa_ui_garden.git
+cd abao_marissa_ui_garden
 
-## Available Scripts
+### 2. Install dependencies
+npm install
 
-In the project directory, you can run:
+### 3. Run Storybook locally
+npm run storybook
+Open your browser at http://localhost:6006
 
-### `npm start`
+### 4. Run tests
+npm run test
+This runs Jest tests for all components.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Docker Production Build
+### 5. Build Docker image
+docker build -t abao-marissa-ui-garden-prod -f Dockerfile.prod .
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 6. Run Docker container
+docker run -p 8080:80 abao-marissa-ui-garden-prod
+Open your browser at http://localhost:8080 to view the Storybook build served by Nginx.
 
-### `npm test`
+## Project Structure
+.storybook
+dist
+node_modules
+public
+src/
+    components/
+        Button
+        Card
+        Dropdown
+        HeroImage
+        Img
+        RadioButton
+        SmartRating
+        Table
+        Text
+        index.ts
+    stories
+    App.css
+    App.test.tsx
+    App.tsx
+    index.ts
+    index.tsx
+    logo.svg
+    reportWebVitals.ts
+    setupTests.ts
+storybook-static
+.gitignore
+babel.config.js
+Dockerfile.prod
+global.d.ts
+jest.config.js
+package-lock.json
+package.json
+README.md
+rollup.config.js
+setupTests.ts
+tsconfig.json
+vitest.config.ts
+vitest.shims.d.ts
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used
+### React + TypeScript
+### Styled-components (for styling)
+### Storybook (component documentation)
+### Jest + React Testing Library (unit testing)
+### Rollup (bundling)
+### Docker + Nginx (production deployment)
 
-### `npm run build`
+## Notes
+### All components support:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A default and disabled state
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Customization via props
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Accessibility with labels and test IDs
 
-### `npm run eject`
+## All components have:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+At least 2 tests: visible check and disabled style check
