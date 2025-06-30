@@ -31,26 +31,26 @@ dist
 node_modules
 public
 src/
-    components/
-        Button
-        Card
-        Dropdown
-        HeroImage
-        Img
-        RadioButton
-        SmartRating
-        Table
-        Text
-        index.ts
-    stories
-    App.css
-    App.test.tsx
-    App.tsx
-    index.ts
-    index.tsx
-    logo.svg
-    reportWebVitals.ts
-    setupTests.ts
+components/
+Button
+Card
+Dropdown
+HeroImage
+Img
+RadioButton
+SmartRating
+Table
+Text
+index.ts
+stories
+App.css
+App.test.tsx
+App.tsx
+index.ts
+index.tsx
+logo.svg
+reportWebVitals.ts
+setupTests.ts
 storybook-static
 .gitignore
 babel.config.js
