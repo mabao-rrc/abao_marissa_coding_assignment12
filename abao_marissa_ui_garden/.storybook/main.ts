@@ -1,19 +1,20 @@
-import type { StorybookConfig } from '@storybook/react-vite';
+import type { StorybookConfig } from '@storybook/react-webpack5';
 
 const config: StorybookConfig = {
-  stories: [
-    '../src/**/*.mdx',
-    '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)',
+  "stories": [
+    "../src/**/*.mdx",
+    "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
   ],
-  addons: [
-    '@chromatic-com/storybook',
-    '@storybook/addon-docs',
-    '@storybook/addon-a11y',
-    '@storybook/addon-vitest',
+  "addons": [
+    "@storybook/preset-create-react-app",
+    "@storybook/addon-docs"
   ],
-  framework: {
-    name: '@storybook/react-vite',
-    options: {},
+  "framework": {
+    "name": "@storybook/react-webpack5",
+    "options": {}
   },
+  "staticDirs": [
+    "..\\public"
+  ]
 };
 export default config;

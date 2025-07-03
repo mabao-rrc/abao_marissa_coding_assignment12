@@ -1,4 +1,4 @@
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react-webpack5';
 import Img from './Component_Img';
 
 const meta: Meta<typeof Img> = {

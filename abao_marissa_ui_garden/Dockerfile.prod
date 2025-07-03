@@ -1,34 +1,54 @@
-# ---- Stage 1: Build ----
-FROM node:20-alpine AS build
+# # ---- Stage 1: Build ----
+# FROM node:20-alpine AS build
 
-# Set working directory
-WORKDIR /app
+# # Set working directory
+# WORKDIR /app
 
-# Copy package info + install
+# # Copy package info + install
+# COPY package*.json ./
+# RUN npm install && npm cache clean --force
+
+# # Copy configs and source code
+# COPY tsconfig.json ./
+# COPY rollup.config.js ./
+# COPY .storybook ./.storybook
+# COPY src ./src
+# COPY public ./public
+# # COPY . .
+
+# # Build the library
+# # RUN npm run rollup
+
+# # # Build Storybook static files
+# RUN npm run build-storybook
+
+# # ---- Stage 2: Serve Storybook ----
+# FROM nginx:1.25-alpine
+
+# # Copy built Storybook to nginx's html directory
+# COPY --from=build /app/storybook-static /usr/share/nginx/html
+
+# # Expose port 80 for the web server
+# EXPOSE 80
+
+# # Start nginx
+# CMD ["nginx", "-g", "daemon off;"]
+
+FROM node:22 AS build
+
+WORKDIR /test-directory
+
 COPY package*.json ./
-RUN npm install && npm cache clean --force
+RUN npm install
 
-# Copy configs and source code
-COPY tsconfig.json ./
-COPY rollup.config.js ./
-COPY .storybook ./.storybook
-COPY src ./src
-COPY public ./public
+COPY . .
+RUN npm run build
 
-# Build the library
-RUN npm run rollup
+FROM nginx:1.25.3
 
-# Build Storybook static files
-RUN npm run build-storybook
+COPY --from=build /test-directory/build /usr/share/nginx/html
 
-# ---- Stage 2: Serve Storybook ----
-FROM nginx:1.25-alpine
-
-# Copy built Storybook to nginx's html directory
-COPY --from=build /app/storybook-static /usr/share/nginx/html
-
-# Expose port 80 for the web server
 EXPOSE 80
-
-# Start nginx
 CMD ["nginx", "-g", "daemon off;"]
+
+

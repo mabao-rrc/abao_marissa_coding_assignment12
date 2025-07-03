@@ -7,7 +7,7 @@
  * Description: This file defines Storybook stories for the Label component.
  */
 
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react-webpack5';
 import Label from './Component_Label';
 
 export default {

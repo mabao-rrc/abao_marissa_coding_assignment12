@@ -1,4 +1,4 @@
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react-webpack5';
 import RadioButton from './Component_RadioButton';
 
 const meta: Meta<typeof RadioButton> = {

@@ -7,7 +7,7 @@
  * Description: This file defines Storybook stories for the Card component.
  */
 
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react-webpack5';
 import Card from './Component_Card';
 
 export default {

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import Button from './Component_Button';
 
 const meta: Meta<typeof Button> = {
@@ -16,7 +16,7 @@ type Story = StoryObj<typeof Button>;
 
 export const Default: Story = {
   args: {
-    label: 'Click Me',
+    label: 'Click Me!',
     backgroundColor: '#007BFF',
     disabled: false,
   },

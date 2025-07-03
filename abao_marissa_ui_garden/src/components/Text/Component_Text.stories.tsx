@@ -7,7 +7,7 @@
  * Description: This file defines Storybook stories for the Text component, including controls for customization.
  */
 
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react-webpack5';
 import Text from './Component_Text';
 
 export default {

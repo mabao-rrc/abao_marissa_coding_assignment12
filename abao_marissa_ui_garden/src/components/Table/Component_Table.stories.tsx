@@ -1,4 +1,4 @@
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react-webpack5';
 import Table from './Component_Table';
 
 const meta: Meta<typeof Table> = {

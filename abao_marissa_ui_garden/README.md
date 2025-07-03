@@ -22,8 +22,8 @@
 ### docker build -t abao-marissa-ui-garden-prod -f Dockerfile.prod .
 
 ### 6. Run Docker container
-### docker run -p 8080:80 abao-marissa-ui-garden-prod
-### Open your browser at http://localhost:8080 to view the Storybook build served by Nginx.
+### docker run -p 8083:80 abao-marissa-ui-garden-prod
+### Open your browser at http://localhost:8083 to view the Storybook build served by Nginx.
 
 ## Project Structure
 ### .storybook
