@@ -63,8 +63,6 @@
 ### rollup.config.js
 ### setupTests.ts
 ### tsconfig.json
-### vitest.config.ts
-### vitest.shims.d.ts
 
 ## Technologies Used
 ### React + TypeScript
